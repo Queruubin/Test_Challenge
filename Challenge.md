@@ -33,23 +33,23 @@ El propósito de esta prueba es evaluar tus habilidades en desarrollo Backend y 
 - Debe ejecutarse en el **puerto 3000**.
 - El backend debe implementarse como una **API RESTful** utilizando **Node**. **(NO uses ningún framework con opiniones como Adonis o Nest)**.
 - **El backend debe incluir los siguientes endpoints**:
-    - **[POST /api/files]**
-        - Un endpoint que acepta la carga de un archivo CSV desde el frontend y almacena los datos en una base de datos o una estructura de datos. Debes usar la clave "file" en la solicitud del cuerpo.
-        - Esta ruta debe devolver el estado 200 y un objeto con la clave "message" con el valor "El archivo se cargó correctamente".
-        - O esta ruta debe devolver el estado 500 y un objeto con la clave "message" con un mensaje de error en el valor.
-    - **[GET /api/users]**
-        - Debe incluir un endpoint que permita al frontend buscar a través de los datos CSV cargados. Esta ruta debe aceptar un parámetro de consulta ?q= para términos de búsqueda y debe buscar en CADA columna del CSV. El filtro debe buscar coincidencias parciales y también ser insensible a mayúsculas y minúsculas.
-        - Esta ruta debe devolver el estado 200 y un objeto con la clave "data" con un array de objetos dentro de él.
-        - O esta ruta debe devolver el estado 500 y un objeto con la clave "message" con un mensaje de error en el valor.
+  - **[POST /api/files]**
+    - Un endpoint que acepta la carga de un archivo CSV desde el frontend y almacena los datos en una base de datos o una estructura de datos.
+    - Esta ruta debe devolver el estado 200 y un objeto con la clave "message" con el valor "El archivo se cargó correctamente".
+    - O esta ruta debe devolver el estado 500 y un objeto con la clave "message" con un mensaje de error en el valor.
+  - **[GET /api/users]**
+    - Debe incluir un endpoint que permita al frontend buscar a través de los datos CSV cargados. Esta ruta debe aceptar un parámetro de consulta ?q= para términos de búsqueda y debe buscar en CADA columna del CSV. El filtro debe buscar coincidencias parciales y también ser insensible a mayúsculas y minúsculas.
+    - Esta ruta debe devolver el estado 200 y un objeto con la clave "data" con un array de objetos dentro de él.
+    - O esta ruta debe devolver el estado 500 y un objeto con la clave "message" con un mensaje de error en el valor.
 
 **Evaluación**
 
 - Evaluaremos tu solución en función de los siguientes criterios:
-    - Completitud de todas las características y funcionalidades requeridas.
-    - Calidad y organización del código.
-    - Calidad y cobertura de las pruebas automatizadas.
-    - Amigabilidad y capacidad de respuesta del frontend.
-    - Rendimiento y eficiencia del backend.
+  - Completitud de todas las características y funcionalidades requeridas.
+  - Calidad y organización del código.
+  - Calidad y cobertura de las pruebas automatizadas.
+  - Amigabilidad y capacidad de respuesta del frontend.
+  - Rendimiento y eficiencia del backend.
 - Entender los requisitos también es parte de la prueba. Para cualquier otro problema, comunícate con **hr@shawandpartners.com** para obtener ayuda.
 
 **¡Buena suerte con tu prueba!**

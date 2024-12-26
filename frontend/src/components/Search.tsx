@@ -3,10 +3,12 @@ import { Data } from "../types"
 import { searchData } from "../services/search"
 import { toast } from "sonner"
 import './Search.css'
+import { Card } from "./Card"
 
 export default function Search ({ initialData }: {initialData: Data}) {
   const [data, setData] = useState<Data>(initialData)
   const [search, setSearch] = useState<string>('')
+
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value)
   }
@@ -29,53 +31,34 @@ export default function Search ({ initialData }: {initialData: Data}) {
     .then(response => {
       const [err, newData] = response
       if (err) return toast.error(err.message)
-
+        
       if (newData) setData(newData)
     })
   }, [search, initialData])
 
   return (
-    <div className="container_data">
+    <section className="container_data">
       <form className="form_search">
-        <input onChange={handleSearch} type="text" placeholder="Buscar informacion..."/>
+        <input onChange={handleSearch} type="text" data-testid="input-search" placeholder="Buscar informacion..."/>
       </form>
 
-      {data.length > 0 && (
-        <div id="container-table">
-          <table>
-            <thead>
-              <tr>
-                {Object.keys(data[0]).map((data, index) => (
-                  <th key={index}>{data}</th>
-              ))}
-              </tr>
-            </thead>
-
-            <tbody>
-              {data.map((d) => (
-                  <tr key={d.ID} >
-                  {Object
-                  .entries(d)
-                  .map(
-                      ([_, value], index) =>
-                      <td key={index}>{value}</td>
-                    )}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
+      <div className="container_cards">
+        {data.length > 0 && (
+          data.map((info, index) => (
+            <Card data={info} key={index} />
+          ))
+        )}
+      </div>
 
       <ul className="ul_container_main">
         
         {data.length === 0 && (
-          <div id="text_no_data">
-            No hat datos coincidentes
+          <div id="text_no_data" data-testid="text_no_data">
+            No matching data
           </div>
         )}
       </ul>
-    </div>
+    </section>
 
   )
 }

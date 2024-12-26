@@ -22,17 +22,25 @@
   width: 100%;
   overflow-x: auto;
 }
+.container_cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  padding: 20px;
+  align-items: center;
+}
 table {
   font-size: 17px;
   text-align: center;
   width: 100%;
-  background-color: #353536;
+  background-color: #181818;
   border-collapse: collapse;
   border-radius: 5px;
   min-width: 320px;
   
   & thead {
-    background-color: #272631;
+    background-color: #000000;
     height: 47px;
     border-bottom: 1px solid rgb(235, 235, 235);
   }
@@ -60,7 +68,7 @@ table {
 
 
 #text_no_data {
-  color: rgb(184, 184, 70);
+  color: rgb(255, 255, 255);
   font-size: 18px;
   font-style: italic;
 }
